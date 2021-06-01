@@ -1,0 +1,75 @@
+Paul Wochnowski z5079392
+## 1
+struct hdr {
+  // anything of size 4
+  int padding;
+  char *s1;
+  char *s2;
+};
+
+int f(int n, struct hdr* hdr) {
+  if (n == 3) {
+    long l = strtol(hdr->s1, 0, 10);
+    l += strtol(hdr->s2, 0, 10);
+    if (l == (int) htons(0x11BB)) {
+      return 1;
+    }
+  }
+  return 0;
+}
+
+re 2
+
+// Assume ebp+s refers to the second argument as
+// it is used without initalizing (so unlikely to be local)
+// AND it is indexed of the base pointer (so unlikely to be global)
+int sumDifference(char* s1, char* s2) {
+  int i = 0;
+  int sum = 0;
+  while (i != strlen(s2)) {
+    sum += s2[i] - s1[i];
+  }
+  return sum;
+}
+
+re 3
+char * array; // defined somewher
+
+// this could return either int or void
+void f() {
+  int pos = 0;
+  char c = getchar();
+  bool done = 0;
+  while (!done) {
+    switch (c) {
+      case('P'):
+        putchar(array[pos]);
+        break;
+      case('U'):
+        pos = (pos + 1) % 27;
+        break;
+      case('U'):
+        pos = (pos - 1) % 27;
+        break;
+      default:
+        done = 1;
+    }
+  }
+  putchar('\n');
+
+  // this might not be in the function its ambiguous
+  return 0;
+}
+
+re 4
+double sumDifference(float *arr1, float *arr2) {
+  float* v1 = arr1;
+  float* v2 = arr2;
+  float sum = 0.0;
+  while (arr1 != NULL) {
+    sum += *arr1 - *arr2;
+    arr1++;
+    arr2++;
+  }
+  return sum;
+}

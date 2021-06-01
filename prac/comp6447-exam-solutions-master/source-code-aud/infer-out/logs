@@ -1,0 +1,40 @@
+[15581][environment] CWD = /Users/paulw/comp6447/hostfolder/prac/comp6447-exam-solutions-master/source-code-aud
+[15581][environment] No .inferconfig file found
+[15581][environment] Project root = /Users/paulw/comp6447/hostfolder/prac/comp6447-exam-solutions-master/source-code-aud
+[15581][environment] INFER_ARGS =   @/var/folders/07/m7h649s16t9cznp7qvnl0w3r0000gn/T/args.tmp.ec2195
+[15581][environment]   ++Contents of '/var/folders/07/m7h649s16t9cznp7qvnl0w3r0000gn/T/args.tmp.ec2195':
+[15581][environment]     run
+[15581][environment]   
+[15581][environment] command line arguments:   infer run -- clang -c better_sudo.cAnalyzer: checkers
+[15581][environment] Active checkers: annotation reachability (Java), biabduction (C/C++/ObjC, Java), fragment retains view (Java), immutable cast (Java), liveness (C/C++/ObjC), printf args (Java), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC)
+[15581][environment] Infer log identifier is 
+Infer version v0.15.0
+[15581][environment] Copyright 2009 - present Facebook. All Rights Reserved.
+[15581][environment] 
+[15581][   progress] Capturing in make/cc mode...
+[15581][      debug] 
+[15581][      debug] *** Beginning capture of file /Users/paulw/comp6447/hostfolder/prac/comp6447-exam-solutions-master/source-code-aud/better_sudo.c ***
+[15581][      debug] Clang frontend action is translating and linting
+[15581][      debug] Loading the following linters files: /usr/local/Cellar/infer/0.15.0/lib/infer/infer/bin/../lib/linter_rules/linters.al
+[15581][      debug] Elapsed: 408ms.
+[15581][      debug] 
+[15581][   progress] Found 1 source file to analyze in /Users/paulw/comp6447/hostfolder/prac/comp6447-exam-solutions-master/source-code-aud/infer-out
+[15581][   progress] Starting analysis...
+[15581][   progress] 
+[15581][   progress] legend:
+[15581][   progress]   "F" analyzing a file
+[15581][   progress]   "." analyzing a procedure
+[15581][   progress] 
+[15581][   progress] 
+[15581][environment] Parallel jobs: 4
+[15581][   progress] F
+[15589][   progress] ...........
+[15624][      phase] ============================================================
+[15624][      phase] = New infer execution begins
+[15624][      phase] ============================================================
+[15624][environment] CWD = /Users/paulw/comp6447/hostfolder/prac/comp6447-exam-solutions-master/source-code-aud
+[15624][environment] No .inferconfig file found
+[15624][environment] Project root = /Users/paulw/comp6447/hostfolder/prac/comp6447-exam-solutions-master/source-code-aud
+[15624][environment] INFER_ARGS =   command line arguments:   infer-exploreAnalyzer: checkers
+[15624][environment] Active checkers: annotation reachability (Java), biabduction (C/C++/ObjC, Java), fragment retains view (Java), immutable cast (Java), liveness (C/C++/ObjC), printf args (Java), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC)
+[15624][environment] Infer log identifier is 

@@ -1,0 +1,43 @@
+Paul Wochnowski z5079392
+
+# 1
+/*
+  elem is of type int* whereas storage is a char array, this means
+  that incrementing elem by 1 is the same as incrementing storage by 4
+  so after 32/4 = 8 increments we will have reached the end of the array
+  and since this means that after a few more iterations we reach the return address
+  we effectively have control of the instruction pointer.
+*/
+
+#2
+/*
+  In the third if statement the third argument `l - sizeof(struct hdr) ` is of type
+  unsigned int so if this quantity were negative then it would be treated as a very large
+  positive number instead. this is a big bug and since we control l (by virtue of us controlling smp_hdr.l),
+  we can set l to a number greater than 0 and less than 8, which will result in us being able to write A LOT
+  into the buffer buf, giving us a buffer overflow
+*/
+
+#3
+/*
+    If you set the size of the header to be negative and less than -8
+    then the check (header.size + 8 > MAX_WAV_SIZE) will always pass since we have a
+    negative number on the LHS. However, in the call to fread in the following line, the argument
+    is of type size_t which is unsigned so that the negative becomes positive, and very large at that.
+    Since this is the number of items we read into buf from the file we control, we have a buffer overflow.
+*/
+
+
+#4
+/*
+ if (st->top == HEIGHT) {
+      fprintf(stderr, "push: staque overflow\n");
+      return;
+   }
+   ++st->top;
+   st->array[st->top] = data;
+   This needs to check if st->top+1 == HEIGHT, since we are incrementing before add the data.
+
+   Otherwise we are able to overwrite the top variable which allows us to make the stack as big as we wish,
+   and giving us the ability to do arbitrary read writes in memory at adresses, since the only check in push is if it is equal to HEIGHT and not if it is bigger.
+*/

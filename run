@@ -1,0 +1,30 @@
+INT z 623
+DEL z
+INT a 5
+INT b 1
+INT c 1
+INT d 1
+INT e 1
+INT f 1
+INT g 1
+INT h 1
+INT i 1
+INT j 1
+END
+DEL b
+DEL c
+DEL d
+DEL e
+DEL f
+DEL h
+DEL i 
+DEL j 
+DEL z
+DEL j
+END
+DIV z z
+PRINT b
+PRINT j
+DEL z
+PRINT z
+END

@@ -1,0 +1,61 @@
+Found 7 issues
+
+better_sudo.c:150: error: NULL_DEREFERENCE
+  pointer `f` last assigned on line 149 could be null and is dereferenced by call to `fgets()` at line 150, column 2.
+  148.   	system("logname > /tmp/better_sudo.tmp");
+  149.   	FILE* f = fopen("/tmp/better_sudo.tmp","r");
+  150. > 	fgets(username,sizeof username,f);
+  151.   	*strchr(username,'\n') = '\0';
+  152.   	return username;
+
+better_sudo.c:150: error: RESOURCE_LEAK
+  resource of type `__sFILE` acquired by call to `fopen()` at line 149, column 12 is not released after line 150, column 2.
+  148.   	system("logname > /tmp/better_sudo.tmp");
+  149.   	FILE* f = fopen("/tmp/better_sudo.tmp","r");
+  150. > 	fgets(username,sizeof username,f);
+  151.   	*strchr(username,'\n') = '\0';
+  152.   	return username;
+
+better_sudo.c:185: error: NULL_DEREFERENCE
+  pointer `password_file` last assigned on line 180 could be null and is dereferenced by call to `fgets()` at line 185, column 2.
+  183.   	}
+  184.   	char sudo_password[512];
+  185. > 	fgets(sudo_password,sizeof sudo_password, password_file);
+  186.   
+  187.   	/* prevent timing attacks */
+
+better_sudo.c:185: error: RESOURCE_LEAK
+  resource of type `__sFILE` acquired by call to `fopen()` at line 180, column 24 is not released after line 185, column 2.
+  183.   	}
+  184.   	char sudo_password[512];
+  185. > 	fgets(sudo_password,sizeof sudo_password, password_file);
+  186.   
+  187.   	/* prevent timing attacks */
+
+better_sudo.c:202: error: NULL_DEREFERENCE
+  pointer `sudoers` last assigned on line 201 could be null and is dereferenced by call to `fgets()` at line 202, column 8.
+  200.   	char* username = get_username();
+  201.   	FILE* sudoers = fopen(CONF_PATH_VALID_SUDOERS,"r");
+  202. > 	while(fgets(line, sizeof line, sudoers)) {
+  203.   			for(int i=0;i<=strlen(line);++i) {
+  204.   				if(line[i] == '\n') {
+
+better_sudo.c:210: error: RESOURCE_LEAK
+  resource of type `__sFILE` acquired to `return` by call to `fopen()` at line 201, column 18 is not released after line 210, column 5.
+  208.   			}
+  209.   			if(!strcmp(username,line)) {
+  210. > 				return true;
+  211.   			}
+  212.   	}
+
+better_sudo.c:213: error: RESOURCE_LEAK
+  resource of type `__sFILE` acquired to `return` by call to `fopen()` at line 201, column 18 is not released after line 213, column 2.
+  211.   			}
+  212.   	}
+  213. > 	return false;
+  214.   }
+
+Summary of the reports
+
+     RESOURCE_LEAK: 4
+  NULL_DEREFERENCE: 3

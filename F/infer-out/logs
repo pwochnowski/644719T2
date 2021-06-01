@@ -1,0 +1,31 @@
+[2667][environment] CWD = /Users/paulw/comp6447/hostfolder/F
+[2667][environment] No .inferconfig file found
+[2667][environment] Project root = /Users/paulw/comp6447/hostfolder/F
+[2667][environment] INFER_ARGS =   @/var/folders/07/m7h649s16t9cznp7qvnl0w3r0000gn/T/args.tmp.ed6126
+[2667][environment]   ++Contents of '/var/folders/07/m7h649s16t9cznp7qvnl0w3r0000gn/T/args.tmp.ed6126':
+[2667][environment]     run
+[2667][environment]   
+[2667][environment] command line arguments:   infer run -- gcc -c audit3.cAnalyzer: checkers
+[2667][environment] Active checkers: annotation reachability (Java), biabduction (C/C++/ObjC, Java), fragment retains view (Java), immutable cast (Java), liveness (C/C++/ObjC), printf args (Java), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC)
+[2667][environment] Infer log identifier is 
+Infer version v0.15.0
+[2667][environment] Copyright 2009 - present Facebook. All Rights Reserved.
+[2667][environment] 
+[2667][   progress] Capturing in make/cc mode...
+[2667][      debug] 
+[2667][      debug] *** Beginning capture of file /Users/paulw/comp6447/hostfolder/F/audit3.c ***
+[2667][      debug] Clang frontend action is translating and linting
+[2667][      debug] Loading the following linters files: /usr/local/Cellar/infer/0.15.0/lib/infer/infer/bin/../lib/linter_rules/linters.al
+[2667][      debug] Elapsed: 101ms.
+[2667][      debug] 
+[2667][   progress] Found 1 source file to analyze in /Users/paulw/comp6447/hostfolder/F/infer-out
+[2667][   progress] Starting analysis...
+[2667][   progress] 
+[2667][   progress] legend:
+[2667][   progress]   "F" analyzing a file
+[2667][   progress]   "." analyzing a procedure
+[2667][   progress] 
+[2667][   progress] 
+[2667][environment] Parallel jobs: 4
+[2667][   progress] F
+[2675][   progress] ..

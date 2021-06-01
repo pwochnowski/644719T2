@@ -1,0 +1,30 @@
+Found 3 issues
+
+audit3.c:79: error: RESOURCE_LEAK
+  resource of type `__sFILE` acquired by call to `fopen()` at line 46, column 18 is not released after line 79, column 5.
+  77.   
+  78.       rewind(file);
+  79. >     fread(data, 1, header.size + 8, file);
+  80.       play_wav(data);
+  81.       return 0;
+
+audit3.c:68: error: UNINITIALIZED_VALUE
+  The value read from body.channel_num was never initialized.
+  66.           goto error;
+  67.       } else {
+  68. >         fprintf(stderr, "%s: Channels : %i\n", argv[1], body.channel_num);
+  69.           fprintf(stderr, "%s: Sample Size: %i\n", argv[1], body.sample_size);
+  70.       }
+
+audit3.c:69: error: UNINITIALIZED_VALUE
+  The value read from body.sample_size was never initialized.
+  67.       } else {
+  68.           fprintf(stderr, "%s: Channels : %i\n", argv[1], body.channel_num);
+  69. >         fprintf(stderr, "%s: Sample Size: %i\n", argv[1], body.sample_size);
+  70.       }
+  71.   
+
+Summary of the reports
+
+  UNINITIALIZED_VALUE: 2
+        RESOURCE_LEAK: 1
